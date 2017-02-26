@@ -3,6 +3,7 @@ set -e # Exit with nonzero exit code if anything fails
 
 SOURCE_BRANCH="dev"
 TARGET_BRANCH="master"
+BUILD_PATH = "build/bundled"
 
 function doCompile {
     bower install
@@ -21,21 +22,21 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing TARGET_BRANCH for this repo into build/bundled
+# Clone the existing TARGET_BRANCH for this repo into BUILD_PATH
 # Create a new empty branch if TARGET_BRANCH doesn't exist yet (should only happen on first deploy)
-git clone -b SOURCE_BRANCH $REPO build/bundled
-cd build/bundled
+git clone -b $SOURCE_BRANCH $REPO $BUILD_PATH
+cd $BUILD_PATH
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ../../
 
 # Clean out existing contents
-rm -rf build/bundled/**/* || exit 0
+rm -rf $BUILD_PATH/**/* || exit 0
 
 # Run our compile script
 doCompile
 
 # Now let's go have some fun with the cloned repo
-cd build/bundled
+cd $BUILD_PATH
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
