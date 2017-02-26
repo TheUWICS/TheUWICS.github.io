@@ -1,0 +1,9 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/uwics-app.html",
+  "fragments": [
+    "src/uwics-about.html",
+    "src/uwics-execs.html",
+    "src/uwics-events.html"
+  ]
+}

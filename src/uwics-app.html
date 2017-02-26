@@ -1,0 +1,96 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="uwics-about.html">
+<link rel="import" href="uwics-execs.html">
+<link rel="import" href="uwics-events.html">
+
+<dom-module id="uwics-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      paper-tabs, paper-toolbar {
+        background-color: #03A9F4;
+        color: #fff;
+      }
+
+      paper-tabs{
+        --paper-tabs-selection-bar-color: #607D8B;
+      }
+
+      paper-toolbar{
+        --paper-toolbar-title: {
+          margin-left: 0px;
+          font-size: 10px;
+        }
+      }
+
+      @media(min-width: 375px){
+        paper-toolbar{
+          --paper-toolbar-title: {
+            margin-left: 0px;
+            font-size: 12px;
+          }
+        }
+      }
+
+      @media(min-width: 425px){
+        paper-toolbar{
+          --paper-toolbar-title: {
+            margin-left: 0px;
+            font-size: 14px;
+          }
+        }
+      }
+
+      @media(min-width: 600px){
+        paper-toolbar{
+          --paper-toolbar-title: {
+             margin-left: 0px;
+             font-size: 20px;
+          }
+        }
+      }
+
+      iron-pages{
+        /*margin: 0px 50px;*/
+        overflow-y: auto;
+      }
+
+      iron-image{
+        --iron-image-width: 100px;
+        --iron-image-height: 100px;
+        float: left;
+        margin-right: 10px;
+      }
+    </style>
+    <paper-toolbar class="medium-tall">
+      <span class="title">The University of The West Indies Computing Society (UWICS)</span>
+      <paper-tabs selected={{selected}} class="bottom">
+        <paper-tab>About</paper-tab>
+        <paper-tab>Events</paper-tab>
+        <paper-tab>Executives</paper-tab>
+      </paper-tabs>
+    </paper-toolbar>
+    <iron-pages selected={{selected}}>
+      <uwics-about></uwics-about>
+      <uwics-events></uwics-events>
+      <uwics-execs></uwics-execs>
+    </iron-pages>
+  </template>
+  <script>
+    Polymer({
+      is: 'uwics-app',
+      properties: {
+        selected: {
+          type: Number,
+          value: 0
+        }
+      }
+    });
+  </script>
+</dom-module>

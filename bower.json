@@ -1,0 +1,17 @@
+{
+  "name": "uwics-site",
+  "description": "Homepage for UWICS",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.6.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.8",
+    "paper-tabs": "PolymerElements/paper-tabs#^1.6.2",
+    "paper-toolbar": "PolymerElements/paper-toolbar#^1.1.6",
+    "paper-card": "PolymerElements/paper-card#^1.1.1",
+    "iron-image": "PolymerElements/iron-image#^1.2.3",
+    "iron-collapse": "PolymerElements/iron-collapse#^1.2.0",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.1.2",
+    "google-map": "GoogleWebComponents/google-map#^1.1.11"
+  }
+}

@@ -1,0 +1,7 @@
+anguage: generic # don't install any environment
+
+script: bash ./deploy.sh
+env:
+  global:
+  - ENCRYPTION_LABEL: "a74f3dc53e71"
+  - COMMIT_AUTHOR_EMAIL: "TheUWICS@users.noreply.github.com"

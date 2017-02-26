@@ -1,0 +1,58 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/google-map/google-map.html">
+
+<dom-module id="uwics-about">
+    <template>
+        <style>
+            p {
+                margin: 15px 50px;
+            }
+            #info{
+                display: flex;
+                flex-direction: row;
+            }
+            #contacts, #map{
+                flex: 1;
+                text-align: center;
+            }
+            paper-card{
+                width: calc(50% - 10px);
+                margin: 4px;
+            }
+            google-map {
+                height: 100%;
+                width: 100%;
+            }
+            h2{
+                color: white;
+            }
+        </style>
+        <p>
+            The University of the West Indies Computing Society (UWICS) was established in 1996. The purpose of this society is to forge a plan that focuses on computing and information technology in everyday life. UWICS comprises of individuals who are enthusiastic about the interesting fascinations that can be done with technology whether it is learning about the world of programming, gaining a better understanding of how augmented reality works, exploring the graphical world involved in creating logos or being educated about  the various jobs that are elaborated. We aim to foster an environment that is educational, entertaining and inspiring so that members are encouraged to discover and develop their knowledge in computing and information technology.
+        </p>
+        <div id="info">
+            <div id="contacts">
+                <h2>Contacts</h2>
+                <paper-card heading="President"><div class="card-actions"><a href="mailto:uwics.president@gmail.com">uwics.president@gmail.com</a></div></paper-card>
+                <paper-card heading="Vice President"><div class="card-actions"><a href="mailto:uwics.vpresident@gmail.com">uwics.vpresident@gmail.com</a></div></paper-card>
+                <paper-card heading="Secretary"><div class="card-actions"><a href="mailto:uwics.secretary@gmail.com">uwics.secretary@gmail.com</a></div></paper-card>
+                <paper-card heading="Treasurer"><div class="card-actions"><a href="mailto:uwics.treasurer@gmail.com">uwics.treasurer@gmail.com</a></div></paper-card>
+                <paper-card heading="Public Relations Officer"><div class="card-actions"><a href="mailto:uwics.pro@gmail.com">uwics.pro@gmail.com</a></div></paper-card>
+                <paper-card heading="Media Manager"><div class="card-actions"><a href="mailto:uwics.media@gmail.com">uwics.media@gmail.com</a></div></paper-card>
+                <paper-card heading="Events Coordinator"><div class="card-actions"><a href="mailto:uwics.events@gmail.com">uwics.events@gmail.com</a></div></paper-card>
+                <paper-card heading="Web Master"><div class="card-actions"><a href="mailto:uwics.webmaster@gmail.com">uwics.webmaster@gmail.com</a></div></paper-card>
+            </div>
+            <div id="map">
+                <h2>Meetings in FST CSL2 @ 2pm</h2>
+                <google-map latitude="10.641340" longitude="-61.400789" api-key="AIzaSyAC1DNZu2VUnMkMBlY48m5JCErcORDCHJQ" zoom="19">
+                    <google-map-marker latitude="10.641340" longitude="-61.400789" title="FST CSL2"></google-map-marker>
+                </google-map>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'uwics-about'
+        });
+    </script>
+</dom-module>

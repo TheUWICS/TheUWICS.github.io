@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>UWICS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <script defer>
+      (function() {
+        window.Polymer = {lazyRegister: true, dom: 'shadow'};
+        if (!('registerElement' in document
+            && 'import' in document.createElement('link')
+            && 'content' in document.createElement('template'))) {
+          // browser doesn't have web components so polyfill web components
+          var e = document.createElement('script');
+          e.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+          document.head.appendChild(e);
+        }
+
+        // load service worker
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('service-worker.js');
+          });
+        }
+      })();
+    </script>
+    <link rel="import" href="/src/uwics-app.html" defer>
+    <style>
+      body{
+        margin: 0;
+        background: #B0BEC5;
+        /*overflow: hidden;*/
+      }
+    </style>
+  </head>
+  <body>
+    <uwics-app></uwics-app>
+  </body>
+</html>

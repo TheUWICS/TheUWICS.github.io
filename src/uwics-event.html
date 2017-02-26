@@ -1,0 +1,51 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+
+<dom-module id="uwics-event">
+    <template>
+        <style>
+            :host {
+                display: block;
+                margin: 20px 10px 0 10px;
+            }
+
+            paper-card {
+                background: #fff;
+                --paper-card-header-image: {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        </style>
+        <paper-card image={{image}}>
+            <div id="card_content">
+                {{name}} <br>
+                {{date}} <br>
+                {{desc}}
+            </div>
+        </paper-card>
+    </template>
+    <script>
+        Polymer({
+            is: 'uwics-event',
+            properties: {
+                image: {
+                    type: String,
+                    value: "../images/logo.png"
+                },
+                name: {
+                    type: String,
+                    value: ""
+                },
+                date: {
+                    type: String,
+                    value: ""
+                },
+                desc: {
+                    type: String,
+                    value: ""
+                }
+            }
+        });
+    </script>
+</dom-module>
