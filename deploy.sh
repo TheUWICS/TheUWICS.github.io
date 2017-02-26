@@ -26,7 +26,7 @@ SHA=`git rev-parse --verify HEAD`
 git clone $REPO build/bundled
 cd build/bundled
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ..
+cd ../../
 
 # Clean out existing contents
 rm -rf build/bundled/**/* || exit 0
