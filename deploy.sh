@@ -29,7 +29,7 @@ git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ../../
 
 # Clean out existing contents
-rm -rf build/bundled/**/* || exit 0
+rm -rf build/bundled/* || exit 0
 
 # Run our compile script
 doCompile
