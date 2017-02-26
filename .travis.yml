@@ -3,6 +3,7 @@ node_js:
 - stable
 
 before_install:
+  - npm install -g bower
   - npm install -g polymer-cli
 
 script: bash ./deploy.sh

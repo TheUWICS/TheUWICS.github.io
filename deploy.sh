@@ -4,10 +4,15 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="dev"
 TARGET_BRANCH="master"
 
+function doCompile {
+    bower install
+    polymer build
+}
+
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
-    polymer build
+    doCompile
     exit 0
 fi
 
@@ -27,7 +32,7 @@ cd ..
 rm -rf build/bundled/**/* || exit 0
 
 # Run our compile script
-polymer build
+doCompile
 
 # Now let's go have some fun with the cloned repo
 cd build/bundled
