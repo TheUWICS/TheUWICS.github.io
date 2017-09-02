@@ -23,8 +23,8 @@ SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing TARGET_BRANCH for this repo into build/bundled
 # Create a new empty branch if TARGET_BRANCH doesn't exist yet (should only happen on first deploy)
-git clone -b $SOURCE_BRANCH $REPO build/bundled
-cd build/bundled
+git clone $REPO build/bundled/
+cd build/bundled/
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ../../
 
@@ -35,7 +35,7 @@ rm -rf build/bundled/* || exit 0
 doCompile
 
 # Now let's go have some fun with the cloned repo
-cd build/bundled
+cd build/bundled/
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
