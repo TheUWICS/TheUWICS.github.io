@@ -16,9 +16,12 @@ after_success: |
     git clone https://github.com/TheUWICS/TheUWICS.github.io.git deploy
     cd deploy
     git checkout -b master
-    rm *
+    rm -rf *
+    rm -rf .travis.yml
     cd ../
-    cp -rf build/default deploy
+    cp -rf build/default/ deploy
+    cp favicon.ico deploy/favicon.ico
+    cp manifest.json deploy/manifest.json
     cd deploy
     git add .
     git -c user.name='Travis CI Deployment Bot' -c user.email='TheUWICS@users.noreply.github.com' commit -m 'Deploying'
