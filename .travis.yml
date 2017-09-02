@@ -6,8 +6,22 @@ before_install:
   - npm install -g bower
   - npm install -g polymer-cli
 
-script: bash ./deploy.sh
-env:
-  global:
-  - ENCRYPTION_LABEL: "a74f3dc53e71"
-  - COMMIT_AUTHOR_EMAIL: "TheUWICS@users.noreply.github.com"
+install: bower install
+
+script: polymer build
+
+after_success: |
+  if [ -n "$GITHUB_TOKEN" ]; then
+    cd "$TRAVIS_BUILD_DIR"
+    # This generates a `web` directory containing the website.
+    make web
+    cd web
+    git init
+    git checkout -b master
+    git add .
+    git -c user.name='Travis CI Deployment Bot' -c user.email='TheUWICS@users.noreply.github.com' commit -m init
+    # Make sure to make the output quiet, or else the API token will leak!
+    # This works because the API key can replace your password.
+    git push -f -q https://TheUWICS:$GITHUB_TOKEN@github.com/TheUWICS/TheUWICS.github.io master &2>/dev/null
+    cd "$TRAVIS_BUILD_DIR"
+  fi
