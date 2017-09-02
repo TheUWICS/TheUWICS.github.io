@@ -21,7 +21,7 @@ REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing TARGET_BRANCH for this repo into build/bundled
+# Clone the existing TARGET_BRANCH for this repo into build/default
 # Create a new empty branch if TARGET_BRANCH doesn't exist yet (should only happen on first deploy)
 git clone $REPO build/default/
 cd build/default/
@@ -35,7 +35,7 @@ rm -rf build/default/* || exit 0
 doCompile
 
 # Now let's go have some fun with the cloned repo
-cd build/bundled/
+cd build/default/
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
