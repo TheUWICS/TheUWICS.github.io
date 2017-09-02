@@ -18,8 +18,8 @@ after_success: |
     git checkout -b master
     rm *
     cd ../
-    cp -r build/default deploy
-    cd repo
+    cp -rf build/default deploy
+    cd deploy
     git add .
     git -c user.name='Travis CI Deployment Bot' -c user.email='TheUWICS@users.noreply.github.com' commit -m 'Deploying'
     git push -f -q https://TheUWICS:$GITHUB_TOKEN@github.com/TheUWICS/TheUWICS.github.io master &2>/dev/null
