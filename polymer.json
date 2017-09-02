@@ -5,5 +5,11 @@
     "src/uwics-about.html",
     "src/uwics-execs.html",
     "src/uwics-events.html"
-  ]
+  ],
+  "builds": [{
+    "bundle": true,
+    "js": {"minify": true},
+    "css": {"minify": true},
+    "html": {"minify": true}
+  }]
 }
