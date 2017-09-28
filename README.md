@@ -27,7 +27,7 @@ Due to the implementation of the deploy script the bower_components folder requi
 
 | Instruction | Command |
 | ----------- | ------- |
-|Clone the repository to a new folder | git checkout https://github.com/TheUWICS/TheUWICS.github.io.git uwics-master |
+|Clone the repository to a new folder | git clone https://github.com/TheUWICS/TheUWICS.github.io.git uwics-master |
 | Copy the bower_components folder from dev to master|  | 
 | Open terminal in the repository  | |
 | Change to the master branch | git checkout master |
