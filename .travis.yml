@@ -25,6 +25,7 @@ after_success: |
     cp manifest.json deploy/manifest.json
     cd deploy
     git add .
+    git add -f bower_components
     git -c user.name='Travis CI Deployment Bot' -c user.email='TheUWICS@users.noreply.github.com' commit -m "Deploying ${SHA}"
     git push -f -q https://TheUWICS:$GITHUB_TOKEN@github.com/TheUWICS/TheUWICS.github.io master &2>/dev/null
     cd "$TRAVIS_BUILD_DIR"
