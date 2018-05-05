@@ -5,6 +5,7 @@
 <link rel="import" href="uwics-about.html">
 <link rel="import" href="uwics-execs.html">
 <link rel="import" href="uwics-events.html">
+<link rel="import" href="uwics-projects.html">
 
 <dom-module id="uwics-app">
   <template>
@@ -74,12 +75,14 @@
         <paper-tab>About</paper-tab>
         <paper-tab>Events</paper-tab>
         <paper-tab>Executives</paper-tab>
+        <paper-tab>Projects</paper-tab>
       </paper-tabs>
     </paper-toolbar>
     <iron-pages selected={{selected}}>
       <uwics-about></uwics-about>
       <uwics-events></uwics-events>
       <uwics-execs></uwics-execs>
+      <uwics-projects></uwics-projects>
     </iron-pages>
   </template>
   <script>
