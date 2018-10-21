@@ -1,0 +1,45 @@
+@media only screen and (max-width: 768px) {
+  #cont {
+    width: 100vw;
+    margin-bottom: 30px;
+  }
+
+  //#info {
+  //  display: block;
+  //  width: 100%;
+  //}
+
+  #info .card {
+    width: 100vw;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #cont {
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  #info {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  #info .card {
+    display: inline-block;
+    width: 45vw;
+    margin: 10px;
+  }
+}
+
+//@media only screen and (min-width: 1440px) {
+//  #cont {
+//
+//  }
+//}
+

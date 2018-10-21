@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+.carousel-indicators li {
+  background-color: aqua !important;
+  bottom: -50px !important;
+  opacity: 0.5;
+}
+
+
+.carousel-indicators li.active {
+  background-color: aqua !important;
+  opacity: 1;
+}
+
+.carousel-indicators {
+}
+
+
+
