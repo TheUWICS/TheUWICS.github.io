@@ -18,3 +18,23 @@ app-exec-card {
 .other-cards {
   width: 45vw;
 }
+
+@media only screen and (max-width: 767px) {
+  #parent {
+    justify-content: flex-start;
+  }
+
+  .col-md-6 {
+    padding-left: 0 !important;
+  }
+
+  .row {
+    margin-left: 0;
+  }
+
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+}
