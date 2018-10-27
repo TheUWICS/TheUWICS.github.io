@@ -1,4 +1,25 @@
-#cont {
-  width: 80vw;
+.row {
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+#buttons {
+  width: 25vw;
   margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+#buttons button {
+  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  #buttons {
+    width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
 }

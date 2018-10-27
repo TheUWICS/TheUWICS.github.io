@@ -10,6 +10,7 @@ import { ExecsComponent } from './execs/execs.component';
 import { AboutComponent } from './about/about.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ExecCardComponent } from './exec-card/exec-card.component';
+import { AboutCardComponent } from './about-card/about-card.component';
 
 const appRoutes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     AboutComponent,
     CalendarComponent,
     ExecCardComponent,
+    AboutCardComponent,
   ],
   imports: [
     BrowserModule,

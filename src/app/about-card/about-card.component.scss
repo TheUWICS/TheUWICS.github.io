@@ -1,0 +1,24 @@
+img { width: 40vw; }
+
+.row {
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.col-md-5 {
+  padding-left: 0;
+}
+
+@media screen and (max-width: 767px) {
+
+  .row {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    text-align: center !important;
+  }
+}
