@@ -1,3 +1,44 @@
-<p>
-  execs works!
-</p>
+<div class="container-fluid">
+  <div class="row" id = "parent">
+
+    <div class="row">
+      <app-exec-card id = "pres_card" [exec]="allExecs.president" ></app-exec-card>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <app-exec-card class = "other-cards" [exec]="allExecs.vice_pres" ></app-exec-card>
+      </div>
+      <div class="col-md-6">
+        <app-exec-card class = "other-cards" [exec]="allExecs.media" ></app-exec-card>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <app-exec-card [exec]="allExecs.events" ></app-exec-card>
+      </div>
+      <div class="col-md-6">
+        <app-exec-card [exec]="allExecs.public" ></app-exec-card>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <app-exec-card [exec]="allExecs.secretary" ></app-exec-card>
+      </div>
+      <div class="col-md-6">
+        <app-exec-card [exec]="allExecs.treasurer" ></app-exec-card>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <app-exec-card [exec]="allExecs.web1" ></app-exec-card>
+      </div>
+      <div class="col-md-6">
+        <app-exec-card [exec]="allExecs.web2" ></app-exec-card>
+      </div>
+    </div>
+  </div>
+</div>

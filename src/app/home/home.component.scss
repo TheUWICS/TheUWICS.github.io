@@ -1,13 +1,19 @@
+hr { margin-top: 0; }
+
+h3 { padding: 10px; }
+
+p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.list-group-item { border: 0; }
+
 @media only screen and (max-width: 768px) {
   #cont {
     width: 100vw;
     margin-bottom: 30px;
   }
-
-  //#info {
-  //  display: block;
-  //  width: 100%;
-  //}
 
   #info .card {
     width: 100vw;
@@ -34,12 +40,7 @@
     display: inline-block;
     width: 45vw;
     margin: 10px;
+    text-align: center;
+    height: 300px;
   }
 }
-
-//@media only screen and (min-width: 1440px) {
-//  #cont {
-//
-//  }
-//}
-
