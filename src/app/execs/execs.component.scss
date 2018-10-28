@@ -1,40 +1,22 @@
-app-exec-card {
-  margin: 10px;
+.row {
+  margin-top: 20px;
+  text-align: center;
 }
 
-#parent {
+#pres-card {
   justify-content: center;
 }
 
-.row {
-  align-items: center;
+#parent {
+  margin-bottom: 30px;
 }
 
-#pres_card {
-  width: 45vw;
-  margin: 0 auto;
-}
-
-.other-cards {
-  width: 45vw;
-}
-
-@media only screen and (max-width: 767px) {
-  #parent {
-    justify-content: flex-start;
-  }
-
-  .col-md-6 {
-    padding-left: 0 !important;
-  }
-
+@media screen and (max-width: 767px) {
   .row {
-    margin-left: 3.5vw !important;
-    margin-right: 0 !important;
+    margin-top: 0;
   }
-
-  .container-fluid {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  .col-md-6 {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }

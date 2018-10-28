@@ -1,4 +1,4 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UwicsExec} from '../../assets/interfaces';
 
 @Component({
@@ -8,21 +8,14 @@ import {UwicsExec} from '../../assets/interfaces';
 })
 export class ExecCardComponent implements OnInit {
   @Input() exec: UwicsExec;
-  hideDesc = false;
+  emailString: string;
   constructor() {
 
   }
 
   ngOnInit() {
+    this.emailString = 'mailto:' + this.exec.email;
 
-
-  }
-
-@HostListener('window:resize', ['$event'])
-  onResize(event) {
-    if (window.innerWidth >= 768) {
-      this.hideDesc = true;
-    } else { this.hideDesc = false; }
   }
 
 }

@@ -1,19 +1,15 @@
-<div class="container-fluid" (window:resize) = "onResize($event)">
-  <div class="card">
-    <div class="row" card-body>
-      <div class="col-md-6">
-        <img class="card-img-top" src="assets/logo.png" alt="Card image cap">
-      </div>
-
-      <div class="col-md-5">
-        <h3 class="card-title">{{exec.name}}</h3> <hr>
-        <h4>{{exec.position}}</h4> <hr>
-        <p *ngIf = "hideDesc" class="card-text">{{exec.description}}</p>
-      </div>
+<mdb-card>
+  <img class = "card-img-top" src="assets/logo.png">
+  <mdb-card-body>
+    <mdb-card-title>
+      <h4>{{exec.name}}</h4>
+      <h5>{{exec.position}}</h5>
+      <a [href] = "emailString">{{exec.email}}</a>
+    </mdb-card-title>
+    <hr>
+    <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</mdb-card-text>
+    <div class="flex-row">
+      <button mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Read more</button>
     </div>
-  </div>
-</div>
-
-
-
-<!-- Card -->
+  </mdb-card-body>
+</mdb-card>
