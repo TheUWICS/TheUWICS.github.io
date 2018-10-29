@@ -1,0 +1,50 @@
+<div id="buttons">
+  <button
+    mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect
+    data-toggle="modal" (click)="frame.show()">Want to host a session?</button>
+  <button
+    mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect
+    data-toggle="modal" (click)="frame.show()">Suggest Features</button>
+  <button
+    mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect
+    data-toggle="modal" (click)="frame.show()">Report a Bug/Issue</button>
+</div>
+
+<div mdbModal #frame="mdbModal" class="modal fade top" tabindex="-1" role="dialog"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <i class="fa fa-envelope prefix grey-text"></i>
+          <input type="email" id="form29" class="form-control validate" mdbInputDirective [formControl]="contactFormModalEmail">
+          <label data-error="wrong" data-success="right" for="form29">Your email</label>
+        </div>
+
+        <div class="md-form mb-5">
+          <i class="fa fa-tag prefix grey-text"></i>
+          <input type="text" id="form32" class="form-control validate" mdbInputDirective [formControl]="contactFormModalSubject">
+          <label data-error="wrong" data-success="right" for="form32">Subject</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-pencil prefix grey-text"></i>
+          <textarea type="text" id="form8" class="md-textarea form-control" rows="1" mdbInputDirective [formControl]="contactFormModalMessage"></textarea>
+          <label data-error="wrong" data-success="right" for="form8">Your message</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button mdbBtn color="info" class="waves-light" mdbWavesEffect (click)="frame.hide()">Send
+          <i class="fa fa-paper-plane-o ml-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
