@@ -1,0 +1,38 @@
+.navbar {
+  background-color: #212121;
+}
+
+.body-dark {
+  background-color: #2E2E2E;
+  color: white;
+}
+
+.hr-dark {
+  background-color: white !important;
+}
+
+.card, .card-content, .list-group li {
+  background-color: #212121;
+}
+
+.card, .navbar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1.00), 0 2px 10px 0 rgba(0, 0, 0, 1.00);
+}
+
+.carousel-indicators li {
+  background-color: grey !important;
+  bottom: -50px !important;
+  opacity: 0.5;
+}
+
+.carousel-indicators li.active {
+  background-color: white !important;
+  opacity: 1;
+}
+
+.md-form label { color: white; }
+
+.btn {
+  background-color: #4B515D;
+  color: white !important;
+}

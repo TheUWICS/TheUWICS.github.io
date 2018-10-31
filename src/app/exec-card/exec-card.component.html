@@ -1,15 +1,15 @@
-<mdb-card>
+<mdb-card class = "exec-card">
   <img class = "card-img-top" [src] = "exec.image">
   <mdb-card-body>
     <mdb-card-title>
       <h4>{{exec.name}}</h4>
       <h5>{{exec.position}}</h5>
-      <a [href] = "emailString">{{exec.email}}</a>
+      <a class = "info-link" [href] = "emailString">{{exec.email}}</a>
     </mdb-card-title>
-    <hr>
-    <mdb-card-text>Some quick example text to build on the card title and make up the bulk of the card's content.</mdb-card-text>
+    <hr class = "hr-dark">
+    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="flex-row">
-      <button mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Read more</button>
+      <button mdbBtn type="button" class="waves-light" mdbWavesEffect>Read more</button>
     </div>
   </mdb-card-body>
 </mdb-card>
