@@ -1,37 +1,22 @@
-html, body {
-  overflow-x: hidden !important;
-}
-// Dark theme styles start here
+html, body { overflow-x: hidden !important; }
+hr { margin-top: 0.5rem; }
+body, .navbar, .card{ transition: all 0.5s ease; }
 
-hr {
-  margin-top: 0.5rem;
-}
-
-body{
-  transition: all 0.5s ease;
-}
-
-.dark-theme {
-  @import "dark";
-}
-
-.light-theme {
-  @import "light";
-}
-
-// Dark theme styles end here
+.dark-theme { @import "dark"; }
+.light-theme { @import "light"; }
 
 app-calendar {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 100px;
+}
+
+.first-elem {
+  margin-top: 95px;
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
   width: 50px !important;
   height: 50px !important;
-}
-
-.card, .navbar {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1.00), 0 2px 10px 0 rgba(0, 0, 0, 1.00);
 }

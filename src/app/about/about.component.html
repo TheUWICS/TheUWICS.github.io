@@ -1,11 +1,24 @@
-<div class = "container-fluid">
+<div class = "container-fluid first-elem">
   <div class="row" style = "margin-top: 15px">
-    <h1><strong>More about us</strong></h1>
-    <p style = "text-align: center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
+    <div class="col-md-10 card" style = "text-align: center">
+      <h2><strong>More about us</strong></h2>
+      <p *ngIf = "!expanded; else fullText">
+        {{about.slice(0,196)}}...
+      </p>
+
+      <ng-template #fullText>
+        {{about}}
+      </ng-template>
+      <span id = "expandable" (click) = "expand()">(Click to {{read}})</span>
+      <hr class = "hr-dark">
+      <p>
+        Meeting Location: Faculty of Science and Technology - 2nd Floor
+        <br>
+        Meeting Room: Computer Science Lab 2 (CSL 2)
+        <br>
+        Meeting Time: 2:00 P.M. - 3:00 P.M.
+      </p>
+    </div>
   </div>
   <hr>
 
