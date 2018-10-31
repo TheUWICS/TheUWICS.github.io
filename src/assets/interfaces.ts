@@ -3,4 +3,5 @@ export interface UwicsExec {
   position: string;
   description: string;
   email: string;
+  image: string;
 }

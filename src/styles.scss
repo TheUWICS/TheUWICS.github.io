@@ -2,24 +2,27 @@ html, body {
   overflow-x: hidden !important;
 }
 
+// Dark theme styles start here
 
-a, li, p, h2, h3, h4, h5, h1 {
+body {
+  background-color: #2E2E2E;
+}
+
+a, li, p, h1, h2, h3, h4, h5{
   color: white !important;
-  font-weight: 400;
 }
 
 .card, .card-content, .list-group li {
   background-color: #212121;
 }
 
-.card {
+.card, .navbar {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1.00), 0 2px 10px 0 rgba(0, 0, 0, 1.00);
 }
 
-app-calendar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+hr {
+  background-color: white;
+  margin-top: 0.5rem;
 }
 
 .carousel-indicators li {
@@ -32,6 +35,18 @@ app-calendar {
   background-color: white !important;
   opacity: 1;
 }
+
+.md-form label { color: white; }
+
+// Dark theme styles end here
+
+app-calendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
   width: 50px !important;
