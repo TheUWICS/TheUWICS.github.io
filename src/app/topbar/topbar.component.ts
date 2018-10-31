@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NavigationStart, Router} from '@angular/router';
 
 @Component({
   selector: 'app-topbar',
@@ -8,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class TopbarComponent implements OnInit {
   private themeWrapper;
   dark = true;
-  constructor() {}
+  currentUrl = '/';
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.themeWrapper = document.querySelector('html');
+    this.router.events.subscribe((data) => {
+      if (data instanceof NavigationStart) {
+        this.currentUrl = data.url;
+      }
+    });
   }
 
   toggleTheme() {
