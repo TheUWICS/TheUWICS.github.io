@@ -1,9 +1,9 @@
 .navbar {
   background-color : #00bcd4 ;
 }
-
+//
 .navbar-brand {
-  color: black;
+  color: black !important;
 }
 
 .body-dark {
@@ -14,7 +14,6 @@
 .exec-card {
   color: #00bcd4 !important;
 }
-
 
 .card, .card-content, .list-group li{
   background-color: #b2ebf2 ;

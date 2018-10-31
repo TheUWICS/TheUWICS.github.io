@@ -2,6 +2,10 @@
   background-color: #212121;
 }
 
+.navbar-brand {
+  color: white !important;
+}
+//
 .body-dark {
   background-color: #2E2E2E;
   color: white;
@@ -13,11 +17,9 @@
 
 .card, .card-content, .list-group li {
   background-color: #212121;
+  color: white;
 }
 
-.card, .navbar {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1.00), 0 2px 10px 0 rgba(0, 0, 0, 1.00);
-}
 
 .carousel-indicators li {
   background-color: grey !important;
