@@ -1,5 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-topbar></app-topbar>
-<router-outlet></router-outlet>
+<div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+  <router-outlet  #o="outlet"></router-outlet>
+</div>
 <!--<app-home></app-home>-->
 

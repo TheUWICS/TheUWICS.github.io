@@ -12,6 +12,10 @@ app-calendar {
   margin-top: 100px;
 }
 
+router-outlet ~ * {
+  position: absolute;
+}
+
 .first-elem {
   margin-top: 95px;
 }

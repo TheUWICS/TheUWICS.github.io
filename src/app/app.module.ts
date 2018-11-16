@@ -13,6 +13,7 @@ import { ExecCardComponent } from './exec-card/exec-card.component';
 import { AboutCardComponent } from './about-card/about-card.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 const appRoutes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes),
