@@ -31,4 +31,9 @@ form select {
 i {
   transition: transform 0.2s ease-in;
 }
+@media (max-width: 767px)  {
+  form select {
+    width: 55vw;
+  }
+}
 
