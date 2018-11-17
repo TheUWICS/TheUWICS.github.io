@@ -10,13 +10,19 @@ export class TopbarComponent implements OnInit {
   private themeWrapper;
   dark = true;
   currentUrl = '/';
+
   constructor(private router: Router) {}
+  currentPage = 'Home';
 
   ngOnInit() {
+
+
     this.themeWrapper = document.querySelector('html');
     this.router.events.subscribe((data) => {
       if (data instanceof NavigationStart) {
         this.currentUrl = data.url;
+        this.currentPage = data.url.substr(1);
+        this.currentPage = this.currentPage.charAt(0).toUpperCase() + this.currentPage.substr(1);
       }
     });
   }
@@ -32,4 +38,5 @@ export class TopbarComponent implements OnInit {
 
     this.dark = !this.dark;
   }
+
 }

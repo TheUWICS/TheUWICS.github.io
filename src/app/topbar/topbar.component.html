@@ -1,19 +1,19 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top">
 
-  <mdb-navbar-brand><a class="navbar-brand">The UWI Computing Society</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand">The UWI Computing Society - {{currentPage}}</a></mdb-navbar-brand>
 
   <links>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a
           class="nav-link waves-light"
-          mdbWavesEffect routerLink="/home">Home Page<span class="sr-only">(current)</span></a>
+          mdbWavesEffect routerLink="/home">Home</a>
       </li>
-      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/execs">Board of Executives</a> </li>
-      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/calendar">Calendar of Events</a> </li>
-      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">About Page</a> </li>
-      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/calendar">Need Directions?</a> </li>
-      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect [routerLink] = "currentUrl" (click) = "toggleTheme()">Toggle Dark/Light Theme</a> </li>
+      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/executives" >Executives</a> </li>
+      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/meetings" >Meetings</a> </li>
+      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/about">About </a> </li>
+      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect routerLink="/directions">Directions</a> </li>
+      <li class="nav-item"> <a class="nav-link waves-light" mdbWavesEffect [routerLink] = "currentUrl" (click) = "toggleTheme()">Toggle Theme</a> </li>
 
     </ul>
   </links>

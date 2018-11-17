@@ -8,18 +8,20 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ExecsComponent } from './execs/execs.component';
 import { AboutComponent } from './about/about.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { ExecCardComponent } from './exec-card/exec-card.component';
 import { AboutCardComponent } from './about-card/about-card.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { SessionsComponent } from './sessions/sessions.component';
+import { DirectionsComponent } from './directions/directions.component';
 
 const appRoutes: Routes = [
   { path: 'home',  component: HomeComponent },
-  { path: 'execs', component: ExecsComponent},
-  { path: 'calendar', component: CalendarComponent },
+  { path: 'executives', component: ExecsComponent},
+  { path: 'meetings', component: SessionsComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'directions', component: DirectionsComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -33,10 +35,11 @@ const appRoutes: Routes = [
     HomeComponent,
     ExecsComponent,
     AboutComponent,
-    CalendarComponent,
     ExecCardComponent,
     AboutCardComponent,
     FeedbackComponent,
+    SessionsComponent,
+    DirectionsComponent,
   ],
   imports: [
     BrowserModule,

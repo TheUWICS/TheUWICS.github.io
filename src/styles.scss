@@ -2,22 +2,15 @@ html, body { overflow-x: hidden !important; }
 hr { margin-top: 0.5rem; }
 body, .navbar, .card{ transition: all 0.5s ease; }
 
+.first-elem {
+  margin-top: 95px !important;
+}
+
 .dark-theme { @import "dark"; }
 .light-theme { @import "light"; }
 
-app-calendar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100px;
-}
-
 router-outlet ~ * {
   position: absolute;
-}
-
-.first-elem {
-  margin-top: 95px;
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
