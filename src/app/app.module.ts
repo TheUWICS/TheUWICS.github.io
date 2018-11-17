@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { SessionsComponent } from './sessions/sessions.component';
 import { DirectionsComponent } from './directions/directions.component';
+import { DirectionComponent } from './direction/direction.component';
 
 const appRoutes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     FeedbackComponent,
     SessionsComponent,
     DirectionsComponent,
+    DirectionComponent,
   ],
   imports: [
     BrowserModule,

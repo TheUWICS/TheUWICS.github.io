@@ -3,6 +3,9 @@ li a {
 
 }
 @media (min-width: 992px) {
+  #extra-info {
+    display: none;
+  }
   li {
     margin-left: 10px;
   }

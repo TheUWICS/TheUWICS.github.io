@@ -1,3 +1,74 @@
-<p>
-  directions works!
-</p>
+<div style = "width: 100vw">
+  <div class = "first-elem text-center" id = "getLocation">
+    <div>
+      <p>
+        <span>Meeting Location: Faculty of Science and Technology, 2nd Floor, Computer Science Lab 2</span> <br>
+        <span>Based on where you are, this page will tell you where to go if you can't find our meeting location.</span>
+        <br>
+      </p>
+    </div>
+
+  </div>
+
+  <hr class = "hr-dark">
+
+  <div class="m-3">
+    <div class="card-body">
+      <!-- Vertical Steppers -->
+      <div class="row mt-1">
+        <div class="col-md-12">
+
+          <!-- Stepers Wrapper -->
+          <ul class="stepper stepper-vertical">
+            <app-direction *ngFor = "let step of steps" [info] = "step"></app-direction>
+          </ul>
+          <!-- /.Stepers Wrapper -->
+
+        </div>
+      </div>
+
+      <!-- Steppers Navigation -->
+      <div class="row mt-1">
+        <div class="col-md-12 text-right">
+          <button class="btn btn-flat btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm">Next</button>
+        </div>
+      </div>
+      <!-- /.Vertical Steppers -->
+    </div>
+  </div>
+</div>
+
+
+
+<!--<hello name="{{ name }}"></hello>-->
+<!--<p>-->
+<!--Start editing to see some magic happen :)-->
+<!--</p>-->
+
+<!--<div class="wrapper">-->
+<!--<button (click)="toggleShowDiv('divA')">TOGGLE DIV</button>-->
+<!--<div [@slideInOut]="animationState" class="divA">-->
+<!--THIS DIV IS ANIMATED</div>-->
+<!--<div [@slideInOut]="animationState2" class="content">THIS IS CONTENT DIV</div>-->
+<!--</div>-->
+
+
+
+
+
+
+
+<!--<p>-->
+<!--<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
+<!--Link with href-->
+<!--</a>-->
+<!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
+<!--Button with data-target-->
+<!--</button>-->
+<!--</p>-->
+<!--<div class="collapse" id="collapseExample">-->
+<!--<div class="card card-body">-->
+<!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.-->
+<!--</div>-->
+<!--</div>-->
