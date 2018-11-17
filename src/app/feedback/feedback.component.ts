@@ -8,7 +8,7 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class FeedbackComponent implements OnInit {
 
-  contactFormModalEmail = new FormControl('', Validators.email);
+  contactFormModalEmail = new FormControl('', Validators.compose([Validators.email, Validators.required]));
   contactFormModalSubject = new FormControl('', Validators.required);
   contactFormModalMessage = new FormControl('', Validators.required);
 

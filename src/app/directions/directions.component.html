@@ -23,15 +23,22 @@
       <h3>Your Current Location</h3>
       <img *ngIf = "selectedValue !== undefined; else no_image_displayed" [src] = "current_location_src" alt="No Image Available...">
       <ng-template #no_image_displayed>
-        <p>(Select your location from the list on the left so you know where to start)</p>
+        <p>(An image will appear showing your location selected on the left)</p>
       </ng-template>
     </div>
 
   </div>
   <br>
-  <p class = "text-center" *ngIf = "selectedValue !== undefined">(Make sure to check your surroundings properly)</p>
+  <span class = "text-center" *ngIf = "selectedValue !== undefined">
+      <p>(Make sure to check your surroundings properly)</p>
+      <p>(Not your location? Select another from the list)</p>
+  </span>
 
-  <div *ngIf = "selectedValue !== undefined" class="col-md-12">
+  <ng-template #waiting_for_input>
+    <p class = "text-center">Directions will appear when you select your location from the list above :)</p>
+  </ng-template>
+
+  <div *ngIf = "selectedValue !== undefined; else waiting_for_input" class="col-md-12">
     <hr class = "hr-dark">
     <h2 class = "text-center">Directions to UWICS from {{selectedValue}}</h2>
 
@@ -46,68 +53,63 @@
 
         <div mdbCollapse class = "stepper-content" #test1="bs-collapse">
           <p>{{step.split(':')[1].trim() + placeholder}}</p>
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo-->
-              <!--repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur-->
-              <!--totam,-->
-            <!--atque odit fugiat.</p>-->
-          <!--<p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe-->
-              <!--reiciendis,-->
-              <!--vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam-->
-              <!--expedita ab-->
-            <!--fugiat.</p>-->
         </div>
       </li>
-
-      <!--<li class="active">-->
-
-        <!--<div mdbWavesEffect (click) = "test2.toggle(); rotateIcons($event)" style = "cursor: pointer"  class = "stepper-header">-->
-        <!--<h2 class="stepper-title">Second step </h2>-->
-            <!--<i class="fa fa-angle-right fa-2x" style = "margin-left: 15px" aria-hidden="true"></i>-->
-        <!--</div>-->
-
-        <!--<div mdbCollapse class = "stepper-content" #test2="bs-collapse">-->
-          <!--<hr class = "hr-dark">-->
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse cupiditate voluptate facere-->
-            <!--iusto-->
-            <!--quaerat-->
-            <!--vitae excepturi, accusantium ut aliquam repellat atque nesciunt nostrum similique. Inventore-->
-            <!--nostrum-->
-            <!--ut,-->
-            <!--nobis porro sapiente.</p>-->
-          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo-->
-            <!--repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur-->
-            <!--totam,-->
-            <!--atque odit fugiat.</p>-->
-          <!--<p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe-->
-            <!--reiciendis,-->
-            <!--vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam-->
-            <!--expedita ab-->
-            <!--fugiat.</p>-->
-        <!--</div>-->
-      <!--</li>-->
     </ul>
 
   </div>
 
-  <div class="row mt-1">
-    <div class="col-sm-12 text-right">
-      <button mdbWavesEffect class="btn btn-flat">Cancel</button>
-      <button mdbWavesEffect class="btn btn-flat">Next</button>
+  <hr class = "hr-dark">
+
+  <div class = "row text-center">
+    <div class="col-md-12">
+      <h3>Directions unclear? Let us know!</h3>
+      <button mdbBtn (click)="frame.show()" class="waves-light" mdbWavesEffect>Send
+        <i class="fa fa-paper-plane-o ml-1"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <div mdbModal #frame="mdbModal" class="modal fade top" tabindex="-1" role="dialog"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 font-weight-bold">Write to us</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3">
+          <div class="md-form mb-5">
+            <i class="fa fa-envelope prefix grey-text"></i>
+            <input type="email" id="email" class="form-control validate" mdbInputDirective [formControl]="contactFormModalEmail">
+            <label data-error="wrong" data-success="right" for="email">Your email</label>
+          </div>
+
+          <div class="md-form mb-5">
+            <i class="fa fa-tag prefix grey-text"></i>
+            <input type="text" id="subject" class="form-control validate" mdbInputDirective [formControl]="contactFormModalSubject">
+            <label data-error="wrong" data-success="right" for="subject">Subject</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fa fa-pencil prefix grey-text"></i>
+            <textarea type="text" id="message" class="md-textarea form-control" rows="1" mdbInputDirective [formControl]="contactFormModalMessage"></textarea>
+            <label data-error="wrong" data-success="right" for="message">Your message</label>
+          </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button mdbBtn class="waves-light" mdbWavesEffect (click)="frame.hide()">Send
+            <i class="fa fa-paper-plane-o ml-1"></i>
+          </button>
+
+          <button mdbBtn class="waves-light" type = "reset" value = "reset" (click) = "resetForm()">Cancel</button>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
-
-
-
-
-<!--<hello name="{{ name }}"></hello>-->
-<!--<p>-->
-<!--Start editing to see some magic happen :)-->
-<!--</p>-->
-
-<!--<div class="wrapper">-->
-<!--<button (click)="toggleShowDiv('divA')">TOGGLE DIV</button>-->
-<!--<div [@slideInOut]="animationState" class="divA">-->
-<!--THIS DIV IS ANIMATED</div>-->
-<!--<div [@slideInOut]="animationState2" class="content">THIS IS CONTENT DIV</div>-->
-<!--</div>-->

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {environment} from "../../environments/environment";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-directions',
@@ -19,6 +19,10 @@ export class DirectionsComponent implements OnInit {
 
   steps: string[];
   rotated = false;
+
+  contactFormModalEmail = new FormControl('', Validators.email);
+  contactFormModalSubject = new FormControl('', Validators.required);
+  contactFormModalMessage = new FormControl('', Validators.required);
 
   constructor() {
     this.countryForm = new FormGroup({
@@ -63,4 +67,11 @@ export class DirectionsComponent implements OnInit {
     this.steps = environment.directions.south_gate;
 
   }
+
+  resetForm() {
+    this.contactFormModalEmail.reset();
+    this.contactFormModalMessage.reset();
+    this.contactFormModalSubject.reset();
+  }
 }
+
