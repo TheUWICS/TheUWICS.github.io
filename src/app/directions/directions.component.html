@@ -1,43 +1,102 @@
-<div style = "width: 100vw">
-  <div class = "first-elem text-center" id = "getLocation">
+<div class = "first-elem" id = "cont">
+  <div class = "text-center">
     <div>
+      <h3>Meeting Location: Faculty of Science and Technology, 2nd Floor, Computer Science Lab 2</h3>
       <p>
-        <span>Meeting Location: Faculty of Science and Technology, 2nd Floor, Computer Science Lab 2</span> <br>
-        <span>Based on where you are, this page will tell you where to go if you can't find our meeting location.</span>
-        <br>
+        Based on where you are, this page will tell you where to go if you can't find our meeting location.
       </p>
+    </div>
+  </div>
+
+  <div class = "row text-center">
+
+    <div class="col-md-4" id = "getLocation">
+      <h3>Where are you located?</h3>
+      <form [formGroup]="countryForm" style="display:inline-block">
+        <select [(ngModel)]="selectedValue" (ngModelChange) = "getSrc($event)"  id="location" formControlName="country" class = "browser-default custom-select">
+          <option *ngFor="let location of locations" [ngValue]="location">{{ location }}</option>
+        </select>
+      </form>
+    </div>
+
+    <div  class="col-md-8">
+      <h3>Your Current Location</h3>
+      <img *ngIf = "selectedValue !== undefined; else no_image_displayed" [src] = "current_location_src" alt="No Image Available...">
+      <ng-template #no_image_displayed>
+        <p>(Select your location from the list on the left so you know where to start)</p>
+      </ng-template>
     </div>
 
   </div>
+  <br>
+  <p class = "text-center" *ngIf = "selectedValue !== undefined">(Make sure to check your surroundings properly)</p>
 
-  <hr class = "hr-dark">
+  <div *ngIf = "selectedValue !== undefined" class="col-md-12">
+    <hr class = "hr-dark">
+    <h2 class = "text-center">Directions to UWICS from {{selectedValue}}</h2>
 
-  <div class="m-3">
-    <div class="card-body">
-      <!-- Vertical Steppers -->
-      <div class="row mt-1">
-        <div class="col-md-12">
 
-          <!-- Stepers Wrapper -->
-          <ul class="stepper stepper-vertical">
-            <app-direction *ngFor = "let step of steps" [info] = "step"></app-direction>
-          </ul>
-          <!-- /.Stepers Wrapper -->
+    <ul style = "list-style: none; padding-left: 0">
+      <li *ngFor = "let step of steps" class="active">
 
+        <div mdbWavesEffect style = "cursor: pointer" (click) = "test1.toggle(); rotateIcons($event)" class = "stepper-header">
+          <h4 class="stepper-title">{{step.split(':')[0].trim()}}</h4>
+          <i class="fa fa-angle-right fa-2x" style = "margin-left: 15px" aria-hidden="true"></i>
         </div>
-      </div>
 
-      <!-- Steppers Navigation -->
-      <div class="row mt-1">
-        <div class="col-md-12 text-right">
-          <button class="btn btn-flat btn-sm">Cancel</button>
-          <button class="btn btn-primary btn-sm">Next</button>
+        <div mdbCollapse class = "stepper-content" #test1="bs-collapse">
+          <p>{{step.split(':')[1].trim() + placeholder}}</p>
+          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo-->
+              <!--repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur-->
+              <!--totam,-->
+            <!--atque odit fugiat.</p>-->
+          <!--<p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe-->
+              <!--reiciendis,-->
+              <!--vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam-->
+              <!--expedita ab-->
+            <!--fugiat.</p>-->
         </div>
-      </div>
-      <!-- /.Vertical Steppers -->
+      </li>
+
+      <!--<li class="active">-->
+
+        <!--<div mdbWavesEffect (click) = "test2.toggle(); rotateIcons($event)" style = "cursor: pointer"  class = "stepper-header">-->
+        <!--<h2 class="stepper-title">Second step </h2>-->
+            <!--<i class="fa fa-angle-right fa-2x" style = "margin-left: 15px" aria-hidden="true"></i>-->
+        <!--</div>-->
+
+        <!--<div mdbCollapse class = "stepper-content" #test2="bs-collapse">-->
+          <!--<hr class = "hr-dark">-->
+          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse cupiditate voluptate facere-->
+            <!--iusto-->
+            <!--quaerat-->
+            <!--vitae excepturi, accusantium ut aliquam repellat atque nesciunt nostrum similique. Inventore-->
+            <!--nostrum-->
+            <!--ut,-->
+            <!--nobis porro sapiente.</p>-->
+          <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore error excepturi veniam nemo-->
+            <!--repellendus, distinctio soluta vitae at sit saepe. Optio eaque quia excepturi adipisci pariatur-->
+            <!--totam,-->
+            <!--atque odit fugiat.</p>-->
+          <!--<p>Deserunt voluptatem illum quae nisi soluta eum perferendis nesciunt asperiores tempore saepe-->
+            <!--reiciendis,-->
+            <!--vero quod a dolor corporis natus qui magni quas fuga rem excepturi laboriosam. Quisquam-->
+            <!--expedita ab-->
+            <!--fugiat.</p>-->
+        <!--</div>-->
+      <!--</li>-->
+    </ul>
+
+  </div>
+
+  <div class="row mt-1">
+    <div class="col-sm-12 text-right">
+      <button mdbWavesEffect class="btn btn-flat">Cancel</button>
+      <button mdbWavesEffect class="btn btn-flat">Next</button>
     </div>
   </div>
 </div>
+
 
 
 
@@ -51,24 +110,4 @@
 <!--<div [@slideInOut]="animationState" class="divA">-->
 <!--THIS DIV IS ANIMATED</div>-->
 <!--<div [@slideInOut]="animationState2" class="content">THIS IS CONTENT DIV</div>-->
-<!--</div>-->
-
-
-
-
-
-
-
-<!--<p>-->
-<!--<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
-<!--Link with href-->
-<!--</a>-->
-<!--<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">-->
-<!--Button with data-target-->
-<!--</button>-->
-<!--</p>-->
-<!--<div class="collapse" id="collapseExample">-->
-<!--<div class="card card-body">-->
-<!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.-->
-<!--</div>-->
 <!--</div>-->

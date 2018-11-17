@@ -1,5 +1,33 @@
-#getLocation {
-  width: 60vw;
-  margin: 0 auto;
-
+#cont {
+  width: 90vw;
+  margin-left: 5%;
 }
+
+#getLocation {
+  margin: auto;
+}
+
+.stepper-title {
+  display: inline-block
+}
+
+.rotated {
+  transform: rotate(90deg);
+}
+
+img {
+  width: 85%;
+  height: 450px;
+}
+
+form select {
+  text-align: center;
+  width: 30vw;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+i {
+  transition: transform 0.2s ease-in;
+}
+
